@@ -1,3 +1,5 @@
 from strap import pkg
 
-pkg('tmux', 'fish')
+pkg('fish')
+pkg('tmux')
+pkg('wireguard', executable_name='wg', ppa='wireguard/wireguard')
