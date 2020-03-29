@@ -7,7 +7,7 @@ def apt(name: str) -> None:
 
 
 def pkg_install(name: str) -> None:
-    # assuming Debian
+    # assuming debian
     apt(name)
 
 
