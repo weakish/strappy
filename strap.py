@@ -3,7 +3,7 @@ import subprocess
 
 
 def apt(name: str) -> None:
-    subprocess.run(['apt', 'install', '-y', '-q', name], check=True)
+    subprocess.run(['apt', 'install', '--assume-yes', '--quite', name], check=True)
 
 
 def pkg_install(name: str) -> None:
