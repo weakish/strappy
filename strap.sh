@@ -7,11 +7,11 @@ set -e
 
 # update system
 apt update
-apt upgrade --assume-yes --quite
+apt upgrade --assume-yes --quiet
 
 # python3.8
-apt install --assume-yes --quite python3.8
+apt install --assume-yes --quiet python3.8
 update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
 
 # essential tools
-apt install --assume-yes --quite git curl aptitude
+apt install --assume-yes --quiet git curl aptitude

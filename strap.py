@@ -4,7 +4,7 @@ from typing import Optional
 
 
 def apt(name: str) -> None:
-    subprocess.run(['apt', 'install', '--yes', '--quite', name], check=True)
+    subprocess.run(['apt', 'install', '--yes', '--quiet', name], check=True)
 
 
 def pkg_install(name: str) -> None:
