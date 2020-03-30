@@ -23,5 +23,6 @@ def pkg_install(name: str, options: PKGOptions = {}) -> None:
 
 
 def pkg(name: str, executable_name: Optional[str] = None, options: PKGOptions = {}) -> None:
+    '''Install a package.'''
     if shutil.which(name if executable_name == None else executable_name) == None:
-        pkg_install(name, options)         
+        pkg_install(name, options)
