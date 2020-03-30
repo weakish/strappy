@@ -1,6 +1,13 @@
 import shutil
 import subprocess
-from typing import Optional, TypedDict
+from typing import Optional, Sequence, TypedDict, Union
+
+
+def test(args: Union[str, Sequence[str]]) -> bool:
+    if subprocess.run(args).returncode == 0:
+        return True
+    else:
+        return False
 
 
 class PKGOptions(TypedDict, total=False):
