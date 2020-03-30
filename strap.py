@@ -1,5 +1,6 @@
 import shutil
 import subprocess
+import platform
 from typing import Optional, Sequence, TypedDict, Union
 
 
@@ -33,3 +34,9 @@ def pkg(name: str, executable_name: Optional[str] = None, options: PKGOptions = 
     '''Install a package.'''
     if shutil.which(name if executable_name == None else executable_name) == None:
         pkg_install(name, options)
+
+
+def hostname(host: str) -> None:
+    '''Configure hostname.'''
+    if platform.node() != host:
+        subprocess.run(['hostnamectl', 'set-hostname', host], check=True)
