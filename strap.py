@@ -1,6 +1,7 @@
+import platform
 import shutil
 import subprocess
-import platform
+import time
 from typing import Optional, Sequence, TypedDict, Union
 
 
@@ -26,7 +27,7 @@ def apt(name: str, options: PKGOptions = {}) -> None:
 
 
 def pkg_install(name: str, options: PKGOptions = {}) -> None:
-    # assuming debian
+    # TODO assuming debian
     apt(name, options)
 
 
@@ -39,4 +40,12 @@ def pkg(name: str, executable_name: Optional[str] = None, options: PKGOptions = 
 def hostname(host: str) -> None:
     '''Configure hostname.'''
     if platform.node() != host:
+        # TODO assuming systemd
         subprocess.run(['hostnamectl', 'set-hostname', host], check=True)
+
+
+def utc() -> None:
+    '''Set timezone to UTC.'''
+    if time.tzname != ('UTC', 'UTC'):
+        # TODO assuming systemd
+        subprocess.run(['timedatectl', 'set-timezone', 'UTC'])

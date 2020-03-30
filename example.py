@@ -1,6 +1,6 @@
-from strap import hostname, pkg
+from strap import hostname, pkg, utc
 
-
+utc()
 hostname('strap.example.com')
 
 pkg('fish')
